@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+message: "If you use this work, cite it."
+title: "Proof of Hanna's OEIS A389474 formula (4) and extensions of Salerno–Silverman's (2017) integrality argument"
+authors:
+  - name: "Haobo Ma"
+  - name: "Wenlin Zhang"
+date-released: "2026-11-22"
+version: "2"
+url: "https://mathesis-omega-research.apps.chrono-ai.fun/papers/hanna-composition-congruences?version=2"
+license: "CC-BY-4.0"

@@ -1,0 +1,424 @@
+{
+  "nodes": [
+    {
+      "attribution": null,
+      "authors": [
+        {
+          "affiliation": "ChronoAI Pte Ltd, Singapore",
+          "name": "Haobo Ma"
+        },
+        {
+          "affiliation": "National University of Singapore; ChronoAI Pte Ltd, Singapore",
+          "name": "Wenlin Zhang"
+        }
+      ],
+      "claim": "s1",
+      "contributor": null,
+      "identity": "collected:hanna-composition-congruences:2:s1",
+      "kind": "paper",
+      "label": "Theorem",
+      "lean_source": {
+        "revision": "074df09ddbbef1843ddb383577bfaa827f753e36",
+        "url": "https://github.com/the-omega-institute/trureturing/blob/074df09ddbbef1843ddb383577bfaa827f753e36/D5/S1/Recurrence/Invariants/HannaCompositionSquareModNine.lean"
+      },
+      "lineage": "collected:hanna-composition-congruences:s1",
+      "macros": {
+        "\\Fp": "\\mathbb F_p",
+        "\\Q": "\\mathbb Q",
+        "\\Z": "\\mathbb Z",
+        "\\coef": "[x^{#1}]"
+      },
+      "next_step": "Existing Lean evidence is being checked before new proof work.",
+      "proof_basis": null,
+      "proof_state": "preparing",
+      "receipt": null,
+      "record": "hanna-composition-congruences",
+      "scope": "in_scope",
+      "statement": "There are unique series $A,B\\in x+x^2\\Q[[x]]$ satisfying, respectively,\n\\begin{align}\n A(x^2+2x^3+2A(x)^2)&=3A(x)^2,\\\\\n B(3x^2)&=2x^2+B(x)^2-2B(x)^3.\n\\end{align}\nBoth series have integer coefficients. Moreover,\n\\begin{align}\n A(x)^{3k}&\\equiv A(x^3)^k\\pmod3 &&(k\\geq0),\\\\\n A(x)^2&\\equiv x^2+2x^3\\pmod9,\\\\\n B(x)^3&\\equiv B(x^3)\\pmod3,\\\\\n B(x)^2&\\equiv x^2+2B(x^3)\\pmod3.\n\\end{align}",
+      "status": "preparing",
+      "target_digest": null,
+      "title": "Proof of Hanna's OEIS A389474 formula (4) and extensions of Salerno–Silverman's (2017) integrality argument",
+      "toolchain": null,
+      "version": 2,
+      "work": "hanna-composition-congruences"
+    },
+    {
+      "attribution": null,
+      "authors": [
+        {
+          "affiliation": "ChronoAI Pte Ltd, Singapore",
+          "name": "Haobo Ma"
+        },
+        {
+          "affiliation": "National University of Singapore; ChronoAI Pte Ltd, Singapore",
+          "name": "Wenlin Zhang"
+        }
+      ],
+      "claim": "s10",
+      "contributor": null,
+      "identity": "collected:hanna-composition-congruences:2:s10",
+      "kind": "paper",
+      "label": "Corollary",
+      "lean_source": {
+        "revision": "074df09ddbbef1843ddb383577bfaa827f753e36",
+        "url": "https://github.com/the-omega-institute/trureturing/blob/074df09ddbbef1843ddb383577bfaa827f753e36/D5/S1/Recurrence/Invariants/HannaCompositionSquareModNine.lean"
+      },
+      "lineage": "collected:hanna-composition-congruences:s10",
+      "macros": {
+        "\\Fp": "\\mathbb F_p",
+        "\\Q": "\\mathbb Q",
+        "\\Z": "\\mathbb Z",
+        "\\coef": "[x^{#1}]"
+      },
+      "next_step": "Existing Lean evidence is being checked before new proof work.",
+      "proof_basis": null,
+      "proof_state": "preparing",
+      "receipt": null,
+      "record": "hanna-composition-congruences",
+      "scope": "in_scope",
+      "statement": "For every integral series $F$, prime $p$, $r\\geq1$ and $k\\geq0$,\n\\[\n F(x)^{p^r k}\\equiv F(x^p)^{p^{r-1}k}\\pmod{p^r}.\n\\]\nFor $k>0$ the modulus strengthens to $p^{r+v_p(k)}$.",
+      "status": "preparing",
+      "target_digest": null,
+      "title": "Proof of Hanna's OEIS A389474 formula (4) and extensions of Salerno–Silverman's (2017) integrality argument",
+      "toolchain": null,
+      "version": 2,
+      "work": "hanna-composition-congruences"
+    },
+    {
+      "attribution": null,
+      "authors": [
+        {
+          "affiliation": "ChronoAI Pte Ltd, Singapore",
+          "name": "Haobo Ma"
+        },
+        {
+          "affiliation": "National University of Singapore; ChronoAI Pte Ltd, Singapore",
+          "name": "Wenlin Zhang"
+        }
+      ],
+      "claim": "s2",
+      "contributor": null,
+      "identity": "collected:hanna-composition-congruences:2:s2",
+      "kind": "paper",
+      "label": "Lemma",
+      "lean_source": {
+        "revision": "074df09ddbbef1843ddb383577bfaa827f753e36",
+        "url": "https://github.com/the-omega-institute/trureturing/blob/074df09ddbbef1843ddb383577bfaa827f753e36/D5/S1/Recurrence/Invariants/HannaCompositionSquareModNine.lean"
+      },
+      "lineage": "collected:hanna-composition-congruences:s2",
+      "macros": {
+        "\\Fp": "\\mathbb F_p",
+        "\\Q": "\\mathbb Q",
+        "\\Z": "\\mathbb Z",
+        "\\coef": "[x^{#1}]"
+      },
+      "next_step": "Existing Lean evidence is being checked before new proof work.",
+      "proof_basis": null,
+      "proof_state": "preparing",
+      "receipt": null,
+      "record": "hanna-composition-congruences",
+      "scope": "in_scope",
+      "statement": "For $n\\geq2$, let $P=x+\\sum_{2\\leq j<n}c_jx^j$.\nFor $E=E_A$ or $E=E_B$ and $F=P+t x^n+O(x^{n+1})$,\n\\[\n \\coef{n+1}E(F)=\\coef{n+1}E(P)-2t.\n\\]\nCoefficients of $E(F)$ through degree $n$ do not depend on $t$ or on the\ncoefficients of $F$ in higher degrees.",
+      "status": "preparing",
+      "target_digest": null,
+      "title": "Proof of Hanna's OEIS A389474 formula (4) and extensions of Salerno–Silverman's (2017) integrality argument",
+      "toolchain": null,
+      "version": 2,
+      "work": "hanna-composition-congruences"
+    },
+    {
+      "attribution": null,
+      "authors": [
+        {
+          "affiliation": "ChronoAI Pte Ltd, Singapore",
+          "name": "Haobo Ma"
+        },
+        {
+          "affiliation": "National University of Singapore; ChronoAI Pte Ltd, Singapore",
+          "name": "Wenlin Zhang"
+        }
+      ],
+      "claim": "s3",
+      "contributor": null,
+      "identity": "collected:hanna-composition-congruences:2:s3",
+      "kind": "paper",
+      "label": "Lemma",
+      "lean_source": {
+        "revision": "074df09ddbbef1843ddb383577bfaa827f753e36",
+        "url": "https://github.com/the-omega-institute/trureturing/blob/074df09ddbbef1843ddb383577bfaa827f753e36/D5/S1/Recurrence/Invariants/HannaCompositionSquareModNine.lean"
+      },
+      "lineage": "collected:hanna-composition-congruences:s3",
+      "macros": {
+        "\\Fp": "\\mathbb F_p",
+        "\\Q": "\\mathbb Q",
+        "\\Z": "\\mathbb Z",
+        "\\coef": "[x^{#1}]"
+      },
+      "next_step": "Existing Lean evidence is being checked before new proof work.",
+      "proof_basis": null,
+      "proof_state": "preparing",
+      "receipt": null,
+      "record": "hanna-composition-congruences",
+      "scope": "in_scope",
+      "statement": "Each of \\eqref{eq:A} and \\eqref{eq:B} has a unique normalized rational\nsolution, and that solution belongs to $\\Z[[x]]$.",
+      "status": "preparing",
+      "target_digest": null,
+      "title": "Proof of Hanna's OEIS A389474 formula (4) and extensions of Salerno–Silverman's (2017) integrality argument",
+      "toolchain": null,
+      "version": 2,
+      "work": "hanna-composition-congruences"
+    },
+    {
+      "attribution": null,
+      "authors": [
+        {
+          "affiliation": "ChronoAI Pte Ltd, Singapore",
+          "name": "Haobo Ma"
+        },
+        {
+          "affiliation": "National University of Singapore; ChronoAI Pte Ltd, Singapore",
+          "name": "Wenlin Zhang"
+        }
+      ],
+      "claim": "s4",
+      "contributor": null,
+      "identity": "collected:hanna-composition-congruences:2:s4",
+      "kind": "paper",
+      "label": "Corollary",
+      "lean_source": {
+        "revision": "074df09ddbbef1843ddb383577bfaa827f753e36",
+        "url": "https://github.com/the-omega-institute/trureturing/blob/074df09ddbbef1843ddb383577bfaa827f753e36/D5/S1/Recurrence/Invariants/HannaCompositionSquareModNine.lean"
+      },
+      "lineage": "collected:hanna-composition-congruences:s4",
+      "macros": {
+        "\\Fp": "\\mathbb F_p",
+        "\\Q": "\\mathbb Q",
+        "\\Z": "\\mathbb Z",
+        "\\coef": "[x^{#1}]"
+      },
+      "next_step": "Existing Lean evidence is being checked before new proof work.",
+      "proof_basis": null,
+      "proof_state": "preparing",
+      "receipt": null,
+      "record": "hanna-composition-congruences",
+      "scope": "in_scope",
+      "statement": "Both series have integral compositional inverses $R_A,R_B$, and\n\\begin{align*}\n A(2t^2+R_A(t)^2+2R_A(t)^3)&=3t^2,\\\\\n R_A(3x^2)&=2x^2+R_A(x)^2+2R_A(x)^3,\\\\\n B(3R_B(t)^2)&=2R_B(t)^2+t^2-2t^3.\n\\end{align*}\nThese are A389474 (2), its RELATED SERIES identity, and A389475 (2).",
+      "status": "preparing",
+      "target_digest": null,
+      "title": "Proof of Hanna's OEIS A389474 formula (4) and extensions of Salerno–Silverman's (2017) integrality argument",
+      "toolchain": null,
+      "version": 2,
+      "work": "hanna-composition-congruences"
+    },
+    {
+      "attribution": null,
+      "authors": [
+        {
+          "affiliation": "ChronoAI Pte Ltd, Singapore",
+          "name": "Haobo Ma"
+        },
+        {
+          "affiliation": "National University of Singapore; ChronoAI Pte Ltd, Singapore",
+          "name": "Wenlin Zhang"
+        }
+      ],
+      "claim": "s5",
+      "contributor": null,
+      "identity": "collected:hanna-composition-congruences:2:s5",
+      "kind": "paper",
+      "label": "Corollary",
+      "lean_source": {
+        "revision": "074df09ddbbef1843ddb383577bfaa827f753e36",
+        "url": "https://github.com/the-omega-institute/trureturing/blob/074df09ddbbef1843ddb383577bfaa827f753e36/D5/S1/Recurrence/Invariants/HannaCompositionSquareModNine.lean"
+      },
+      "lineage": "collected:hanna-composition-congruences:s5",
+      "macros": {
+        "\\Fp": "\\mathbb F_p",
+        "\\Q": "\\mathbb Q",
+        "\\Z": "\\mathbb Z",
+        "\\coef": "[x^{#1}]"
+      },
+      "next_step": "Existing Lean evidence is being checked before new proof work.",
+      "proof_basis": null,
+      "proof_state": "preparing",
+      "receipt": null,
+      "record": "hanna-composition-congruences",
+      "scope": "in_scope",
+      "statement": "A389475 (3.a) and (3.b) hold:\n\\[\n \\coef{2n+1}B^2=2\\coef{2n+1}B^3\\quad(n\\geq1),\\qquad\n \\coef{2n}B^2=3^n\\coef n B+2\\coef{2n}B^3\\quad(n\\geq2).\n\\]",
+      "status": "preparing",
+      "target_digest": null,
+      "title": "Proof of Hanna's OEIS A389474 formula (4) and extensions of Salerno–Silverman's (2017) integrality argument",
+      "toolchain": null,
+      "version": 2,
+      "work": "hanna-composition-congruences"
+    },
+    {
+      "attribution": null,
+      "authors": [
+        {
+          "affiliation": "ChronoAI Pte Ltd, Singapore",
+          "name": "Haobo Ma"
+        },
+        {
+          "affiliation": "National University of Singapore; ChronoAI Pte Ltd, Singapore",
+          "name": "Wenlin Zhang"
+        }
+      ],
+      "claim": "s6",
+      "contributor": null,
+      "identity": "collected:hanna-composition-congruences:2:s6",
+      "kind": "paper",
+      "label": "Corollary",
+      "lean_source": {
+        "revision": "074df09ddbbef1843ddb383577bfaa827f753e36",
+        "url": "https://github.com/the-omega-institute/trureturing/blob/074df09ddbbef1843ddb383577bfaa827f753e36/D5/S1/Recurrence/Invariants/HannaCompositionSquareModNine.lean"
+      },
+      "lineage": "collected:hanna-composition-congruences:s6",
+      "macros": {
+        "\\Fp": "\\mathbb F_p",
+        "\\Q": "\\mathbb Q",
+        "\\Z": "\\mathbb Z",
+        "\\coef": "[x^{#1}]"
+      },
+      "next_step": "Existing Lean evidence is being checked before new proof work.",
+      "proof_basis": null,
+      "proof_state": "preparing",
+      "receipt": null,
+      "record": "hanna-composition-congruences",
+      "scope": "in_scope",
+      "statement": "For $C=x+C^2$ with constant coefficient zero,\n$C(x^2+2xC(x)^2)=C(x)^2$, as stated in A389474, COMMENTS.",
+      "status": "preparing",
+      "target_digest": null,
+      "title": "Proof of Hanna's OEIS A389474 formula (4) and extensions of Salerno–Silverman's (2017) integrality argument",
+      "toolchain": null,
+      "version": 2,
+      "work": "hanna-composition-congruences"
+    },
+    {
+      "attribution": null,
+      "authors": [
+        {
+          "affiliation": "ChronoAI Pte Ltd, Singapore",
+          "name": "Haobo Ma"
+        },
+        {
+          "affiliation": "National University of Singapore; ChronoAI Pte Ltd, Singapore",
+          "name": "Wenlin Zhang"
+        }
+      ],
+      "claim": "s7",
+      "contributor": null,
+      "identity": "collected:hanna-composition-congruences:2:s7",
+      "kind": "paper",
+      "label": "Corollary",
+      "lean_source": {
+        "revision": "074df09ddbbef1843ddb383577bfaa827f753e36",
+        "url": "https://github.com/the-omega-institute/trureturing/blob/074df09ddbbef1843ddb383577bfaa827f753e36/D5/S1/Recurrence/Invariants/HannaCompositionSquareModNine.lean"
+      },
+      "lineage": "collected:hanna-composition-congruences:s7",
+      "macros": {
+        "\\Fp": "\\mathbb F_p",
+        "\\Q": "\\mathbb Q",
+        "\\Z": "\\mathbb Z",
+        "\\coef": "[x^{#1}]"
+      },
+      "next_step": "Existing Lean evidence is being checked before new proof work.",
+      "proof_basis": null,
+      "proof_state": "preparing",
+      "receipt": null,
+      "record": "hanna-composition-congruences",
+      "scope": "in_scope",
+      "statement": "For every integer $m$, put $q=2m+1$. There are unique normalized rational\nsolutions $A_m,B_q$ of\n\\begin{align*}\n A_m(x^2+2mx^3+2mA_m(x)^2)&=q A_m(x)^2,\\\\\n B_q(qx^2)&=(q-1)x^2+B_q(x)^2-2B_q(x)^3.\n\\end{align*}\nBoth are integral, and\n\\[\n A_m(x)^2-x^2-2mx^3\\in q^2\\Z[[x]],\\qquad\n \\coef4 A_m^2=mq^2.\n\\]\nIf a prime $p$ divides $q$, then\n$B_q^2\\equiv x^2+2B_q^3\\pmod p$.\nIn particular, $A=A_1$, $B=B_3$, and $B_1$ is A273095's series.",
+      "status": "preparing",
+      "target_digest": null,
+      "title": "Proof of Hanna's OEIS A389474 formula (4) and extensions of Salerno–Silverman's (2017) integrality argument",
+      "toolchain": null,
+      "version": 2,
+      "work": "hanna-composition-congruences"
+    },
+    {
+      "attribution": null,
+      "authors": [
+        {
+          "affiliation": "ChronoAI Pte Ltd, Singapore",
+          "name": "Haobo Ma"
+        },
+        {
+          "affiliation": "National University of Singapore; ChronoAI Pte Ltd, Singapore",
+          "name": "Wenlin Zhang"
+        }
+      ],
+      "claim": "s8",
+      "contributor": null,
+      "identity": "collected:hanna-composition-congruences:2:s8",
+      "kind": "paper",
+      "label": "Corollary",
+      "lean_source": {
+        "revision": "074df09ddbbef1843ddb383577bfaa827f753e36",
+        "url": "https://github.com/the-omega-institute/trureturing/blob/074df09ddbbef1843ddb383577bfaa827f753e36/D5/S1/Recurrence/Invariants/HannaCompositionSquareModNine.lean"
+      },
+      "lineage": "collected:hanna-composition-congruences:s8",
+      "macros": {
+        "\\Fp": "\\mathbb F_p",
+        "\\Q": "\\mathbb Q",
+        "\\Z": "\\mathbb Z",
+        "\\coef": "[x^{#1}]"
+      },
+      "next_step": "Existing Lean evidence is being checked before new proof work.",
+      "proof_basis": null,
+      "proof_state": "preparing",
+      "receipt": null,
+      "record": "hanna-composition-congruences",
+      "scope": "in_scope",
+      "statement": "For every prime $p$, the equation\n\\[\n C_p(x^p)=C_p(x)^p-pC_p(x)^{p+1},\\qquad C_p=x+O(x^2),\n\\]\nhas a unique rational solution, which is integral.\nPut $P_p(t)=t^p-pt^{p+1}$ and $S_p=C_p^{\\langle-1\\rangle}$.\nFor every $r\\geq0$,\n\\[\n S_p(P_p(t))=S_p(t)^p,\\qquad\n C_p\\bigl(S_p(t)^{p^r}\\bigr)=P_p^{\\circ r}(t).\n\\]\nThe cases $p=2,3$ prove the reversion and iteration identities in\nA273095 (FORMULA and EXAMPLE) and A274396 (FORMULA and EXAMPLE)\n\\cite{hanna095,hanna396}.",
+      "status": "preparing",
+      "target_digest": null,
+      "title": "Proof of Hanna's OEIS A389474 formula (4) and extensions of Salerno–Silverman's (2017) integrality argument",
+      "toolchain": null,
+      "version": 2,
+      "work": "hanna-composition-congruences"
+    },
+    {
+      "attribution": null,
+      "authors": [
+        {
+          "affiliation": "ChronoAI Pte Ltd, Singapore",
+          "name": "Haobo Ma"
+        },
+        {
+          "affiliation": "National University of Singapore; ChronoAI Pte Ltd, Singapore",
+          "name": "Wenlin Zhang"
+        }
+      ],
+      "claim": "s9",
+      "contributor": null,
+      "identity": "collected:hanna-composition-congruences:2:s9",
+      "kind": "paper",
+      "label": "Corollary",
+      "lean_source": {
+        "revision": "074df09ddbbef1843ddb383577bfaa827f753e36",
+        "url": "https://github.com/the-omega-institute/trureturing/blob/074df09ddbbef1843ddb383577bfaa827f753e36/D5/S1/Recurrence/Invariants/HannaCompositionSquareModNine.lean"
+      },
+      "lineage": "collected:hanna-composition-congruences:s9",
+      "macros": {
+        "\\Fp": "\\mathbb F_p",
+        "\\Q": "\\mathbb Q",
+        "\\Z": "\\mathbb Z",
+        "\\coef": "[x^{#1}]"
+      },
+      "next_step": "Existing Lean evidence is being checked before new proof work.",
+      "proof_basis": null,
+      "proof_state": "preparing",
+      "receipt": null,
+      "record": "hanna-composition-congruences",
+      "scope": "in_scope",
+      "statement": "For $\\epsilon\\in\\{1,-1\\}$ there is a unique normalized rational series\n$D_\\epsilon$ with\n\\[\n \\epsilon D_\\epsilon(\\epsilon x^2)=D_\\epsilon^2-2D_\\epsilon^3.\n\\]\nIt is integral. Its inverse $T_\\epsilon$ satisfies\n\\[\n \\epsilon D_\\epsilon(\\epsilon T_\\epsilon(t)^2)=t^2-2t^3,\n \\qquad\n T_\\epsilon\\bigl(\\epsilon(t^2-2t^3)\\bigr)\n       =\\epsilon T_\\epsilon(t)^2.\n\\]\nThese include A273320's defining and reversion identities when\n$\\epsilon=-1$ \\cite{hanna320}.",
+      "status": "preparing",
+      "target_digest": null,
+      "title": "Proof of Hanna's OEIS A389474 formula (4) and extensions of Salerno–Silverman's (2017) integrality argument",
+      "toolchain": null,
+      "version": 2,
+      "work": "hanna-composition-congruences"
+    }
+  ]
+}

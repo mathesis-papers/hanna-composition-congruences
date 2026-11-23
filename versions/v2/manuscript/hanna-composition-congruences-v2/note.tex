@@ -1,0 +1,462 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=25mm]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs,array,longtable}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[colorlinks=true,urlcolor=blue,citecolor=blue,linkcolor=blue]{hyperref}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\Fp}{\mathbb F_p}
+\newcommand{\coef}[1]{[x^{#1}]}
+\title{Proof of Hanna's OEIS A389474 formula (4)\protect\\
+and extensions of Salerno--Silverman's\protect\\
+(2017) integrality argument}
+\author{Haobo Ma\\\small ChronoAI Pte Ltd, Singapore
+\and Wenlin Zhang\\\small National University of Singapore\\\small ChronoAI Pte Ltd, Singapore}
+\date{8 November 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+We prove Paul D. Hanna's conjecture in OEIS A389474, formula (4)
+\cite{hanna474}, by extending the integrality argument of Salerno and
+Silverman (2017) \cite{ss} to implicit composition equations:
+the normalized solution of
+$A(x^2+2x^3+2A(x)^2)=3A(x)^2$ satisfies
+$A(x)^{3k}\equiv A(x^3)^k\pmod 3$ for every $k\geq1$.
+The essential step is a coefficient recursion whose numerator is even,
+establishing existence, uniqueness and integrality rather than assuming them.
+A unit factor also gives $A(x)^2\equiv x^2+2x^3\pmod9$, proving formula (3).
+The same integrality argument proves the two conjectures in the companion
+entry A389475, formulas (4.a) and (4.b). We extend the construction to
+odd integer parameters and prove the reversion and iteration identities
+in its linked entries A273095, A273320 and A274396.
+\end{abstract}
+
+\section{The two normalized series}
+Hanna's A389474, formula (4), added on 25 October 2025, labels the coefficient congruence
+$\coef n(A(x)^{3k}-A(x^3)^k)\equiv0\pmod3$ a conjecture for $n,k\geq1$
+\cite{hanna474}. Once the coefficients of $A$ are integers this follows
+from Frobenius; thus the main issue is the implicitly defined series itself.
+We work with formal power series: congruences mean coefficientwise
+divisibility in $\Z[[x]]$, without an analytic convergence assumption.
+Heninger, Rains and Sloane study integrality of multiplicative roots of
+unit series, including other sequences posed by Hanna
+\cite[Section 6]{hrs}. Here parity instead supplies an integral solution
+of a composition equation with zero constant coefficient.
+Hanna's PROG sections already specify the residual-over-two recursions;
+the parity proof below justifies every division and proves uniqueness.
+Salerno and Silverman's Theorem~4 \cite{ss} proves integrality of
+B\"ottcher coordinates for $\varphi(t)\in t^p+pt^{p+1}\Z[[t]]$.
+It already covers the prime-degree family and the signed companions
+below. Our two principal residuals instead couple composition with the
+independent variable; their triangular coefficients still admit the
+same Frobenius-divisibility argument.
+
+\begin{theorem}\label{thm:main}
+There are unique series $A,B\in x+x^2\Q[[x]]$ satisfying, respectively,
+\begin{align}
+ A(x^2+2x^3+2A(x)^2)&=3A(x)^2,\label{eq:A}\\
+ B(3x^2)&=2x^2+B(x)^2-2B(x)^3.\label{eq:B}
+\end{align}
+Both series have integer coefficients. Moreover,
+\begin{align}
+ A(x)^{3k}&\equiv A(x^3)^k\pmod3 &&(k\geq0),\label{eq:FrobA}\\
+ A(x)^2&\equiv x^2+2x^3\pmod9,\label{eq:nine}\\
+ B(x)^3&\equiv B(x^3)\pmod3,\label{eq:FrobB}\\
+ B(x)^2&\equiv x^2+2B(x^3)\pmod3.\label{eq:Bsquare}
+\end{align}
+\end{theorem}
+Here $x+x^2\Q[[x]]$ fixes constant coefficient zero and linear coefficient
+one; the coefficient of $x^2$ is initially free. The construction below
+gives that coefficient as one in both cases. The entry A389475 uses the
+letter $A$ for our $B$ \cite{hanna475}.
+
+\section{An integral construction}
+For a normalized series $F$, put $D=x^2+2x^3$ and define
+\[
+ E_A(F)=F(D+2F^2)-3F^2,\qquad
+ E_B(F)=F(3x^2)-2x^2-F^2+2F^3.
+\]
+All compositions are defined because the inner series have zero constant
+coefficient. The following triangular coefficient calculation applies to
+each residual separately.
+
+\begin{lemma}\label{lem:triangular}
+For $n\geq2$, let $P=x+\sum_{2\leq j<n}c_jx^j$.
+For $E=E_A$ or $E=E_B$ and $F=P+t x^n+O(x^{n+1})$,
+\[
+ \coef{n+1}E(F)=\coef{n+1}E(P)-2t.
+\]
+Coefficients of $E(F)$ through degree $n$ do not depend on $t$ or on the
+coefficients of $F$ in higher degrees.
+\end{lemma}
+\begin{proof}
+The change in $F^2$ is $2t x^{n+1}+O(x^{n+2})$.
+For $E_A$, write $H_F=D+2F^2$. Then
+$H_F-H_P=4t x^{n+1}+O(x^{n+2})$, and both inner series have order at least
+two. In $F(H_F)$ the outer linear term therefore changes by
+$4t x^{n+1}$ through degree $n+1$.
+The new outer term $tH_F^n$ starts in degree $2n>n+1$.
+For an old outer term of exponent $j\geq2$, the change in the inner series
+starts in degree $n+1+2(j-1)\geq n+3$.
+The term $-3F^2$ contributes $-6t x^{n+1}$, giving $-2t$ in total.
+
+For $E_B$, the change in $F(3x^2)$ starts in degree $2n>n+1$,
+and the change in $F^3$ starts in degree $n+2$.
+Only $-F^2$ contributes in degree $n+1$, again giving $-2t$.
+Replacing $n$ by any larger index also shows that higher coefficients of
+$F$ cannot affect the degrees under consideration.
+\end{proof}
+
+\begin{lemma}\label{lem:integer}
+Each of \eqref{eq:A} and \eqref{eq:B} has a unique normalized rational
+solution, and that solution belongs to $\Z[[x]]$.
+\end{lemma}
+\begin{proof}
+Suppose $c_2,\ldots,c_{n-1}$ have already been chosen as integers, and
+let $K_n=\coef{n+1}E(P)$. Reduction modulo two gives, for either residual,
+\[
+ E(P)\equiv P(x^2)-P(x)^2=0\pmod2.
+\]
+Indeed, in characteristic two squaring is additive and each integer
+coefficient satisfies $c^2\equiv c$. Thus $K_n$ is even.
+Set $c_n=K_n/2$. Lemma~\ref{lem:triangular} kills the next residual
+coefficient without changing earlier ones.
+
+The constant and linear coefficients of either residual vanish, and
+the quadratic coefficient is $3-3=0$ for $E_A$ and $3-2-1=0$ for $E_B$.
+These provide the induction's initial conditions. In both cases
+$E(x)=2x^3$, so $c_2=1$. The compatible truncations define an integral
+series; each residual coefficient depends on finitely many input
+coefficients and is zero after its corresponding induction step.
+This proves existence. If two normalized rational solutions first differ
+at coefficient $n\geq2$, Lemma~\ref{lem:triangular} makes their residual
+coefficients in degree $n+1$ differ by $-2$ times that nonzero difference,
+a contradiction. This proves uniqueness over $\Q$.
+\end{proof}
+
+\section{Frobenius and the stronger square congruence}
+For any prime $p$ and $F\in\Z[[x]]$,
+\begin{equation}\label{eq:frob}
+ F(x)^p\equiv F(x^p)\pmod p.
+\end{equation}
+To see this coefficientwise, truncate at an arbitrary degree. In the
+$p$th power of the resulting polynomial, the mixed multinomial
+coefficients are divisible by $p$, and the remaining coefficients satisfy
+$c^p\equiv c\pmod p$. Each coefficient stabilizes as the truncation grows.
+Raising \eqref{eq:frob} to the $k$th power, and applying
+Lemma~\ref{lem:integer} with $p=3$, proves \eqref{eq:FrobA} and
+\eqref{eq:FrobB}, including $k=0$ and the constant coefficient.
+Reducing \eqref{eq:B} modulo three gives
+$0=2x^2+B^2-2B^3$. Consequently
+$B^2\equiv x^2+2B^3\equiv x^2+2B(x^3)\pmod3$, proving
+\eqref{eq:Bsquare}.
+
+For \eqref{eq:nine}, put $H=D+2A^2$ and write
+$A(t)=t+t^2Q(t)$ with $Q\in\Z[[t]]$. Equation~\eqref{eq:A} becomes
+\[
+ 3A^2=H+H^2Q(H)=H\bigl(1+HQ(H)\bigr).
+\]
+The factor $U=1+HQ(H)$ has constant coefficient one, so it has an
+inverse in $\Z[[x]]$: if $U=1+\sum_{i\geq1}u_ix^i$, the inverse
+coefficients satisfy $v_0=1$ and
+$v_n=-\sum_{i=1}^n u_i v_{n-i}$.
+Hence $H=3A^2U^{-1}\in3\Z[[x]]$. Finally,
+\[
+ A^2-D=3A^2-H=A(H)-H=H^2Q(H)\in9\Z[[x]],
+\]
+as required. This completes the proof of Theorem~\ref{thm:main}.
+In particular, the modulus nine is sharp uniformly: $\coef4 A^2=9$.
+
+\section{Other identities in the posing entries}
+\begin{corollary}\label{cor:inverses}
+Both series have integral compositional inverses $R_A,R_B$, and
+\begin{align*}
+ A(2t^2+R_A(t)^2+2R_A(t)^3)&=3t^2,\\
+ R_A(3x^2)&=2x^2+R_A(x)^2+2R_A(x)^3,\\
+ B(3R_B(t)^2)&=2R_B(t)^2+t^2-2t^3.
+\end{align*}
+These are A389474 (2), its RELATED SERIES identity, and A389475 (2).
+\end{corollary}
+\begin{proof}
+The equation $F(R_F)=x$ with $F=x+O(x^2)$ determines each new
+coefficient of $R_F$ with coefficient one from earlier integer
+coefficients. Substitution by a series with linear coefficient one is
+injective: the leading nonzero coefficient of a difference is preserved.
+Since $(R_F(F)-x)(R_F)=0$, it follows that $R_F(F)=x$.
+Substitute $x=R_A(t)$ in \eqref{eq:A} for the first identity and
+apply $R_A$ to \eqref{eq:A}, then put $x=R_A(t)$, for the second.
+Substitute $x=R_B(t)$ in \eqref{eq:B} for the third.
+\end{proof}
+
+\begin{corollary}\label{cor:coefficients}
+A389475 (3.a) and (3.b) hold:
+\[
+ \coef{2n+1}B^2=2\coef{2n+1}B^3\quad(n\geq1),\qquad
+ \coef{2n}B^2=3^n\coef n B+2\coef{2n}B^3\quad(n\geq2).
+\]
+\end{corollary}
+\begin{proof}
+Extract odd and even coefficients from \eqref{eq:B}. Its left side has
+coefficient zero in odd degrees and $3^n\coef n B$ in degree $2n$;
+the exceptional term $2x^2$ lies outside the displayed ranges.
+\end{proof}
+
+\begin{corollary}\label{cor:catalan}
+For $C=x+C^2$ with constant coefficient zero,
+$C(x^2+2xC(x)^2)=C(x)^2$, as stated in A389474, COMMENTS.
+\end{corollary}
+\begin{proof}
+The coefficient of $x^n$ in $C$ is the $(n-1)$st Catalan number \cite{catalan}.
+For $T=C^2$ one has
+$T-T^2=C^2(1-C)(1+C)=x(C+C^2)=x^2+2xC^2$.
+The equation $Y-Y^2=x^2+2xC^2$ has a unique zero-constant-coefficient
+solution by coefficient recursion. Both $Y=T$ and
+$Y=C(x^2+2xC^2)$ solve it, proving the stated comparison.
+\end{proof}
+
+\section{Parameter families and the linked entries}
+The following extension includes the defining equations above; the
+parameterized statement itself is not posed in either entry.
+\begin{corollary}\label{cor:odd}
+For every integer $m$, put $q=2m+1$. There are unique normalized rational
+solutions $A_m,B_q$ of
+\begin{align*}
+ A_m(x^2+2mx^3+2mA_m(x)^2)&=q A_m(x)^2,\\
+ B_q(qx^2)&=(q-1)x^2+B_q(x)^2-2B_q(x)^3.
+\end{align*}
+Both are integral, and
+\[
+ A_m(x)^2-x^2-2mx^3\in q^2\Z[[x]],\qquad
+ \coef4 A_m^2=mq^2.
+\]
+If a prime $p$ divides $q$, then
+$B_q^2\equiv x^2+2B_q^3\pmod p$.
+In particular, $A=A_1$, $B=B_3$, and $B_1$ is A273095's series.
+\end{corollary}
+\begin{proof}
+For each residual, the calculation of Lemma~\ref{lem:triangular} still
+has diagonal $-2$: for $A_m$ its two contributions are $4m$ and $-2q$;
+for $B_q$ only the negative square contributes. Modulo two both residuals
+are $F(x^2)-F(x)^2$. Their values at $F=x$ are $2mx^3$ and $2x^3$.
+The induction in Lemma~\ref{lem:integer} therefore applies unchanged,
+with quadratic coefficients $m$ and $1$.
+For $D_m=x^2+2mx^3$, $H=D_m+2mA_m^2$, write
+$A_m(t)=t+t^2Q(t)$. Then
+$H(1+HQ(H))=qA_m^2$, so $H\in q\Z[[x]]$, and
+$A_m^2-D_m=qA_m^2-H=H^2Q(H)\in q^2\Z[[x]]$.
+Writing $A_m=x+mx^2+cx^3+O(x^4)$ and extracting degree four gives
+$-2c-m^2+mq^2=0$, hence the stated square coefficient.
+Finally, reduce the equation for $B_q$ modulo $p\mid q$.
+\end{proof}
+
+\begin{corollary}\label{cor:prime}
+For every prime $p$, the equation
+\[
+ C_p(x^p)=C_p(x)^p-pC_p(x)^{p+1},\qquad C_p=x+O(x^2),
+\]
+has a unique rational solution, which is integral.
+Put $P_p(t)=t^p-pt^{p+1}$ and $S_p=C_p^{\langle-1\rangle}$.
+For every $r\geq0$,
+\[
+ S_p(P_p(t))=S_p(t)^p,\qquad
+ C_p\bigl(S_p(t)^{p^r}\bigr)=P_p^{\circ r}(t).
+\]
+The cases $p=2,3$ prove the reversion and iteration identities in
+A273095 (FORMULA and EXAMPLE) and A274396 (FORMULA and EXAMPLE)
+\cite{hanna095,hanna396}.
+\end{corollary}
+This is a special case of Salerno--Silverman (2017), Theorem~4,
+with $R=\Z$ and $\varphi(t)=t^p-pt^{p+1}$ \cite{ss}; the following
+coefficient argument supplies an alternative proof.
+\begin{proof}
+Use the residual $E_p(F)=F(x^p)-F^p+pF^{p+1}$.
+For $n\geq2$, adding $t x^n$ changes its coefficient of degree $n+p-1$
+by $-pt$, since $pn>n+p-1$ and the change in $F^{p+1}$ starts in degree
+$n+p$. Earlier coefficients are unaffected. For integral $F$, Frobenius
+makes $E_p(F)$ divisible by $p$. Starting from
+$E_p(x)=px^{p+1}$, divide the successive residual coefficient by $p$
+to construct each integer coefficient. All residual coefficients through
+degree $p$ initially vanish. The same triangular calculation proves
+rational uniqueness. Integral reversion follows as in
+Corollary~\ref{cor:inverses}.
+Now $C_p(z^p)=P_p(C_p(z))$. Substitute $z=S_p(t)$ and apply $S_p$
+for the first displayed identity; iteration gives the second, with
+$P_p^{\circ0}(t)=t$.
+\end{proof}
+
+The analogous integrality statement with an arbitrary degree $d$ in place
+of the prime $p$ is not posed in the cited entries and fails for $d=4$.
+Indeed, $F(x^4)=F^4-4F^5$ forces $F=x+x^2+cx^3+O(x^4)$;
+degree six then gives $4c=14$, so $c=7/2$.
+
+\begin{corollary}\label{cor:signed}
+For $\epsilon\in\{1,-1\}$ there is a unique normalized rational series
+$D_\epsilon$ with
+\[
+ \epsilon D_\epsilon(\epsilon x^2)=D_\epsilon^2-2D_\epsilon^3.
+\]
+It is integral. Its inverse $T_\epsilon$ satisfies
+\[
+ \epsilon D_\epsilon(\epsilon T_\epsilon(t)^2)=t^2-2t^3,
+ \qquad
+ T_\epsilon\bigl(\epsilon(t^2-2t^3)\bigr)
+       =\epsilon T_\epsilon(t)^2.
+\]
+These include A273320's defining and reversion identities when
+$\epsilon=-1$ \cite{hanna320}.
+\end{corollary}
+For $\epsilon=-1$, the substitution $F(x)=-D_{-1}(-x)$ gives
+$F(x^2)=F(x)^2+2F(x)^3$, so this integrality conclusion is also
+covered by Salerno--Silverman (2017), Theorem~4 \cite{ss}.
+\begin{proof}
+The residual $\epsilon F(\epsilon x^2)-F^2+2F^3$ has diagonal $-2$,
+value $2x^3$ at $F=x$, and reduction $F(x^2)-F^2$ modulo two.
+Lemmas~\ref{lem:triangular}--\ref{lem:integer} therefore apply.
+Substitution of $T_\epsilon(t)$ and then application of $T_\epsilon$
+give the two identities.
+\end{proof}
+
+\begin{corollary}\label{cor:powers}
+For every integral series $F$, prime $p$, $r\geq1$ and $k\geq0$,
+\[
+ F(x)^{p^r k}\equiv F(x^p)^{p^{r-1}k}\pmod{p^r}.
+\]
+For $k>0$ the modulus strengthens to $p^{r+v_p(k)}$.
+\end{corollary}
+This is the standard lifting of a Frobenius congruence; see
+Pomerat--Straub (2024), Lemma~2.1 and equation (7) \cite{ps}.
+\begin{proof}
+Frobenius gives the case $r=1$. The binomial theorem shows that
+$U\equiv V\pmod{p^s}$ with $s\geq1$ implies
+$U^p\equiv V^p\pmod{p^{s+1}}$: the intermediate binomial coefficients
+are divisible by $p$, and $sp\geq s+1$ for the last term.
+Iterate and raise to the $k$th power. If $k=p^a u$ with $p\nmid u$,
+use height $r+a$ and exponent $u$ to obtain the stronger modulus.
+\end{proof}
+This strengthens A389474 (4) for every integral series; it is not posed
+there. Its converse would not characterize the composition equation:
+$F=x$ satisfies all these congruences but fails \eqref{eq:A} by $2x^3$.
+The strengthened modulus is sharp uniformly: for $F=x+x^2$ and $k>0$,
+the coefficient of degree $p^rk+1$ in the difference is exactly $p^rk$.
+
+\small
+\begin{longtable}{@{}p{.30\linewidth}p{.65\linewidth}@{}}
+\toprule
+Source item & Coverage\\
+\midrule
+\endhead
+A389474 (1), (2); RELATED SERIES & Proved: integral existence and uniqueness;
+Corollary~\ref{cor:inverses}.\\
+A389474 (3), (4), both labeled ``conjecture'' & Proved: Theorem~\ref{thm:main},
+\eqref{eq:nine} and \eqref{eq:FrobA}.\\
+A389474, COMMENTS & Proved: Catalan identity, Corollary~\ref{cor:catalan}.\\
+A389475 (1), (2), (3.a), (3.b) & Proved: integral existence and uniqueness;
+Corollaries~\ref{cor:inverses}--\ref{cor:coefficients}.\\
+A389475 (4.a), (4.b), both labeled ``conjecture'' & Proved:
+\eqref{eq:FrobB} and \eqref{eq:Bsquare}.\\
+A273095, defining equation, FORMULA, reversion and iteration in EXAMPLE &
+Reproved; prior proof: Salerno--Silverman (2017), Theorem~4.
+Identities stated by Hanna (2016); Corollaries~\ref{cor:odd}, \ref{cor:prime}.\\
+A273320, defining equation, FORMULA and reversion in EXAMPLE &
+Reproved; prior proof: Salerno--Silverman (2017), Theorem~4,
+under $F(x)=-D_{-1}(-x)$; Corollary~\ref{cor:signed}.\\
+A274396, defining equation, FORMULA, reversion and iteration in EXAMPLE &
+Reproved; prior proof: Salerno--Silverman (2017), Theorem~4.
+Identities stated by Hanna (2016); Corollary~\ref{cor:prime}, $p=3$.\\
+A273095, Kotesovec's asymptotic formula (2017) & Not covered.\\
+A389474, numerical real evaluations & Not covered; these require analytic
+convergence and numerical error bounds.\\
+Odd-parameter families & Not posed; proved in Corollary~\ref{cor:odd}.\\
+Prime-power congruence & Not posed in the entries; standard consequence of
+Pomerat--Straub (2024), Lemma~2.1 and (7); Corollary~\ref{cor:powers}.\\
+Converse to the Frobenius condition & Not asserted in the source;
+fails for $F=x$, as above.\\
+Composite-degree integrality & Not posed; obstruction proved for $d=4$,
+where $[x^3]F=7/2$.\\
+\bottomrule
+\end{longtable}
+\normalsize
+
+\section{Statement correspondence and finite checks}
+The pinned Lean sources contain declarations with the following scopes.
+The common namespace prefix is
+\texttt{D5.S1.Recurrence.Invariants.}
+\begin{itemize}
+\item \href{https://github.com/the-omega-institute/trureturing/blob/074df09ddbbef1843ddb383577bfaa827f753e36/D5/S1/Recurrence/Invariants/HannaCompositionSquareModNine.lean}{\texttt{HannaCompositionSquareModNine.lean}}:\\
+In this module,
+\texttt{FormulaFour.resultFour} states existence of a normalized rational
+solution and the integer-multiple-of-three assertion for every normalized
+solution and $n,k\geq1$; \texttt{result} states the integer-multiple-of-nine
+assertion for $n>3$, again with existence.
+\item \href{https://github.com/the-omega-institute/trureturing/blob/074df09ddbbef1843ddb383577bfaa827f753e36/D5/S1/Recurrence/Invariants/HannaTripleSquareFrobeniusModThree.lean}{\texttt{HannaTripleSquareFrobeniusModThree.lean}}:\\
+In this module,
+\texttt{result} states \eqref{eq:FrobB};
+\texttt{FormulaFourB.resultFourB} states \eqref{eq:Bsquare}, both
+coefficientwise for every degree with normalized-solution existence.
+\end{itemize}
+These four declarations concern the original congruences, with the
+normalization and rational-series hypotheses shown above. Integral
+existence, rational uniqueness, reversion identities, the Catalan comparison
+and the parameter, prime and signed extensions have written proofs here.
+The accompanying \texttt{verify.py}
+uses exact integer arithmetic to construct both series through degree 96,
+compare those coefficients with Hanna's OEIS tables, check their defining
+equations through degree 97, and test the displayed congruences through
+degree 96. For \eqref{eq:FrobA} it checks $0\leq k\leq32$; larger $k$
+have order $3k>96$. These finite checks illustrate the results; the
+all-degree conclusions follow from the proofs. Additional finite checks
+compare 30 coefficients of each of A273095, A273320 and A274396, test seven
+odd parameters through degree 30, the prime family for $p=2,3,5,7$ through
+degree 30, and the prime-power congruences for $r=1,2,3$ through degree 30.
+
+\begin{thebibliography}{9}
+\bibitem{hanna474} P. D. Hanna, \emph{A389474}, The On-Line Encyclopedia
+of Integer Sequences, author date 24 October 2025, published revision 11,
+26 October 2025. Formula (4) added in revision 7, 25 October 2025.
+\url{https://oeis.org/A389474};
+\url{https://oeis.org/history?seq=A389474}.
+\bibitem{hanna475} P. D. Hanna, \emph{A389475}, The On-Line Encyclopedia
+of Integer Sequences, author date 26 October 2025, formulas (1)--(4.b).
+\url{https://oeis.org/A389475}.
+\bibitem{hanna095} P. D. Hanna, \emph{A273095}, The On-Line Encyclopedia
+of Integer Sequences, 15 May 2016; FORMULA and EXAMPLE.
+\url{https://oeis.org/A273095}.
+\bibitem{hanna320} P. D. Hanna, \emph{A273320}, The On-Line Encyclopedia
+of Integer Sequences, 19 May 2016; FORMULA and EXAMPLE.
+\url{https://oeis.org/A273320}.
+\bibitem{hanna396} P. D. Hanna, \emph{A274396}, The On-Line Encyclopedia
+of Integer Sequences, 14 July 2016; FORMULA and EXAMPLE.
+\url{https://oeis.org/A274396}.
+\bibitem{catalan} The OEIS Foundation Inc., \emph{A000108: Catalan
+numbers}, The On-Line Encyclopedia of Integer Sequences.
+\url{https://oeis.org/A000108}.
+\bibitem{hrs} N. Heninger, E. M. Rains and N. J. A. Sloane,
+\emph{On the integrality of $n$th roots of generating functions},
+Journal of Combinatorial Theory, Series A \textbf{113} (2006), 1732--1745.
+\url{https://doi.org/10.1016/j.jcta.2006.03.018}.
+Author version: \url{https://arxiv.org/abs/math/0509316v4}, Section 6.
+\bibitem{ss} A. Salerno and J. H. Silverman,
+\emph{Integrality properties of B\"ottcher coordinates for
+one-dimensional superattracting germs}, arXiv:1708.09275,
+first released 30 August 2017; version 2, 3 October 2017,
+Theorem 4 and Section 4.
+\url{https://arxiv.org/abs/1708.09275v2}.
+Published in Ergodic Theory and Dynamical Systems \textbf{40} (2020),
+248--271, first published online 6 July 2018.
+\url{https://doi.org/10.1017/etds.2018.41}.
+\bibitem{ps} J. Pomerat and A. Straub,
+\emph{Criteria for the integrality of $n$th roots of power series},
+Acta Arithmetica \textbf{215} (2024), 1--10.
+\url{https://doi.org/10.4064/aa230425-4-4}.
+Author version: \url{https://arxiv.org/abs/2406.12010v1},
+Lemma 2.1 and equation (7).
+\end{thebibliography}
+\noindent Sources accessed 8 November 2026.\\
+\noindent Licensed under the Creative Commons Attribution 4.0
+International license (CC BY 4.0):
+\url{https://creativecommons.org/licenses/by/4.0/}.
+\end{document}

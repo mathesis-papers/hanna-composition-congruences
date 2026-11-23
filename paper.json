@@ -1,0 +1,66 @@
+{
+  "files": {
+    "pdf": {
+      "bytes": 94307,
+      "matches_public": true,
+      "path": "paper.pdf",
+      "public_sha256": "b1cc64e85940df9b3b841b06898808a16001cb972f4a73cbc66eaedd2cf6f252",
+      "sha256": "b1cc64e85940df9b3b841b06898808a16001cb972f4a73cbc66eaedd2cf6f252"
+    },
+    "source": {
+      "bytes": 22670,
+      "matches_public": true,
+      "path": "source.archive",
+      "public_sha256": "f98fd13966810119bbaf1e8468dedd452cc8552ce5494ca12dbb782eb8d9a766",
+      "sha256": "f98fd13966810119bbaf1e8468dedd452cc8552ce5494ca12dbb782eb8d9a766"
+    }
+  },
+  "source_identity": "Mathesis public projection",
+  "work": {
+    "abstract_text": "We prove Paul D. Hanna's conjecture in OEIS A389474, formula (4), by extending Salerno and Silverman's (2017) integrality argument to implicit composition equations: the normalized solution of A(x^2+2x^3+2A(x)^2)=3A(x)^2 satisfies A(x)^(3k) congruent to A(x^3)^k modulo 3 for every k>=1. A triangular coefficient recursion with even numerators proves integral existence and rational uniqueness. A unit factor proves A389474 (3), the square congruence modulo 9; the same construction proves A389475 (4.a) and (4.b). Odd-parameter extensions and an alternative proof of the Salerno–Silverman prime-degree special case cover the reversion and iteration identities in linked entries A273095, A273320 and A274396. Every integral series also satisfies F(x)^(p^r k) congruent to F(x^p)^(p^(r-1) k) modulo p^r for primes p, r>=1 and k>=0.",
+    "authors": [
+      {
+        "affiliation": "ChronoAI Pte Ltd, Singapore",
+        "name": "Haobo Ma"
+      },
+      {
+        "affiliation": "National University of Singapore; ChronoAI Pte Ltd, Singapore",
+        "name": "Wenlin Zhang"
+      }
+    ],
+    "concept_doi": null,
+    "current_version": 2,
+    "doi": null,
+    "lean_source": {
+      "revision": "074df09ddbbef1843ddb383577bfaa827f753e36",
+      "url": "https://github.com/the-omega-institute/trureturing/blob/074df09ddbbef1843ddb383577bfaa827f753e36/D5/S1/Recurrence/Invariants/HannaCompositionSquareModNine.lean"
+    },
+    "license": "CC-BY-4.0",
+    "msc": [],
+    "pdf": {
+      "bytes": 94307,
+      "sha256": "b1cc64e85940df9b3b841b06898808a16001cb972f4a73cbc66eaedd2cf6f252",
+      "url": "/api/v1/collected-papers/hanna-composition-congruences/files/pdf?version=2"
+    },
+    "previous_version": null,
+    "publication": "public",
+    "published_on": "2026-11-22T23:42:45.673991764Z",
+    "record": "hanna-composition-congruences",
+    "repository_name": "hanna-composition-congruences",
+    "source": {
+      "bytes": 22670,
+      "sha256": "f98fd13966810119bbaf1e8468dedd452cc8552ce5494ca12dbb782eb8d9a766",
+      "url": "/api/v1/collected-papers/hanna-composition-congruences/files/source?version=2"
+    },
+    "title": "Proof of Hanna's OEIS A389474 formula (4) and extensions of Salerno–Silverman's (2017) integrality argument",
+    "versions": [
+      {
+        "previous_version": null,
+        "published_on": "2026-11-22T23:42:45.673991764Z",
+        "revision": "2",
+        "version": 2
+      }
+    ],
+    "work": "hanna-composition-congruences"
+  }
+}
