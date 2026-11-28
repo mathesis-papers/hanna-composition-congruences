@@ -31,6 +31,7 @@
     "concept_doi": "10.5281/zenodo.24408312",
     "current_version": 2,
     "doi": "10.5281/zenodo.24408313",
+    "kind": "note",
     "lean_source": {
       "revision": "074df09ddbbef1843ddb383577bfaa827f753e36",
       "url": "https://github.com/the-omega-institute/trureturing/blob/074df09ddbbef1843ddb383577bfaa827f753e36/D5/S1/Recurrence/Invariants/HannaCompositionSquareModNine.lean"
@@ -55,10 +56,12 @@
     "title": "Proof of Hanna's OEIS A389474 formula (4) and extensions of Salerno–Silverman's (2017) integrality argument",
     "versions": [
       {
+        "changelog": null,
         "previous_version": null,
         "published_on": "2026-11-22T23:42:45.673991764Z",
         "revision": "2",
-        "version": 2
+        "version": 2,
+        "version_label": null
       }
     ],
     "work": "hanna-composition-congruences"
